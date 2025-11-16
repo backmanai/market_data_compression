@@ -45,7 +45,7 @@ class PolarsEventDetector:
         if target_type_ids:
             snapshot = snapshot.filter(pl.col('type_id').is_in(list(target_type_ids)))
 
-        print(f"🌱 Initializing event log from snapshot: {snapshot.height:,} orders")
+        print(f"Initializing event log from snapshot: {snapshot.height:,} orders")
 
         return self._process_new_orders(snapshot, timestamp)
 
